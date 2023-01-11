@@ -1,0 +1,29 @@
+.our-mission {
+  .section-img {
+    position: relative;
+    z-index: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      @include dir(rtl) {
+        right: -24px;
+      }
+      @include dir(ltr) {
+        left: -24px;
+      }
+      bottom: -20px;
+      background-image: url("../img/about-img.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 330px;
+      height: 330px;
+      z-index: -1;
+    }
+    img {
+      height: 400px;
+      width: 400px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+}

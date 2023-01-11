@@ -1,0 +1,27 @@
+.section-60 {
+  padding: 30px 0px;
+}
+
+.border-r20 {
+  border-radius: 20px;
+}
+
+.overlay {
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.26);
+  position: fixed;
+  z-index: 99;
+  display: none;
+}
+
+.prag {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba($color-gray, 1);
+}
+
+@media (max-width: 992px) {
+  .orderms-1 {
+    order: -1;
+  }
+}

@@ -1,0 +1,50 @@
+.sub-intro-section {
+  padding-bottom: 40px;
+  .intro-box {
+    padding: 60px;
+    border-radius: 30px;
+    background-color: rgba($color-gray, 0.05);
+    margin: 40px 0 60px;
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    &::after {
+      content: "";
+      z-index: -999;
+      @include animation-scroll(rotate-location-revers);
+      position: absolute;
+      top: 0px;
+      @include dir(ltr) {
+        right: -50px;
+      }
+      @include dir(rtl) {
+        left: -50px;
+      }
+      background-image: url("../img/3D_Shape-1-svg.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 150px;
+      width: 150px;
+      filter: drop-shadow(5px 4px 2px rgba($color-gray, 0.5));
+    }
+    .intro-title {
+      font-size: 34px;
+      font-weight: 800;
+    }
+  }
+}
+
+.breadcrumb-box {
+  ol,
+  ul {
+    justify-content: center;
+    li {
+      font-size: 12px;
+      a {
+        color: $color-primary;
+      }
+    }
+  }
+}

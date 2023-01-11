@@ -1,0 +1,47 @@
+.icon-box-side {
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .header-section & {
+      justify-content: flex-end;
+    }
+    li {
+      @include dir(rtl) {
+        padding-left: 24px;
+        &:last-of-type {
+          padding: 0;
+        }
+      }
+      @include dir(ltr) {
+        padding-right: 24px;
+        &:last-of-type {
+          padding: 0;
+        }
+      }
+      &.current-menu-item {
+        a {
+          color: rgba($color-primary, 1);
+          font-weight: 700;
+          &:after {
+            width: 50%;
+          }
+        }
+      }
+      a {
+        display: block;
+        @extend%trans2;
+        font-size: 18px;
+        font-weight: 400;
+        color: rgba($color-gray, 1);
+        &:hover {
+          color: rgba($color-primary, 1);
+          &:after {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}

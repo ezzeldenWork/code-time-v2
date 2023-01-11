@@ -1,0 +1,395 @@
+.intro-section {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  padding: 120px 0 40px 0;
+  @include dir(rtl) {
+    background-image: url("../img/rtl-intro.png");
+  }
+  @include dir(ltr) {
+    background-image: url("../img/ltr-intro.png");
+  }
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -84px;
+  .intro-content {
+    .intro-title {
+      font-size: 65px;
+      font-weight: 900;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .button-box {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      & > div {
+        margin-top: 12px;
+      }
+      .button-item {
+        @include dir(rtl) {
+          margin-left: 24px;
+        }
+        @include dir(ltr) {
+          margin-right: 24px;
+        }
+      }
+    }
+  }
+  .intro-img {
+    position: relative;
+    text-align: end;
+    .intro-img {
+      @include animation-scroll(scaleIn);
+    }
+    .game {
+      z-index: 2;
+      position: absolute;
+      max-height: 100px;
+      @include animation-scroll(scaleOut);
+      //   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.1));
+      filter: drop-shadow(5px 9px 4px #00000021);
+      &.game1 {
+        right: 90px;
+        top: 50px;
+      }
+      &.game2 {
+        left: 90px;
+        bottom: -50px;
+        max-height: 195px;
+      }
+      &.game4 {
+        right: 90px;
+        bottom: -50px;
+      }
+    }
+  }
+}
+
+.services-section {
+  .services-box {
+    text-align: center;
+    @extend%trans2;
+    padding: 60px 20px;
+    border: 1px solid rgba($color-gray, 0.4);
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    height: calc(100% - 20px);
+    background-color: rgba($color-white, 1);
+    &:hover {
+      border: 1px solid rgba($color-gray, 0);
+      box-shadow: -15px 50px 50px rgba($color-gray, 0.1);
+    }
+    .services-icon {
+      margin-bottom: 30px;
+      img {
+        max-height: 60px;
+      }
+    }
+    .services-title {
+      font-weight: 800;
+      font-size: 25px;
+      @extend%trans2;
+      margin-bottom: 30px;
+    }
+    .prag {
+      line-height: 1.8;
+    }
+  }
+}
+
+.banner-section {
+  .banner-box {
+    box-shadow: -15px 50px 50px rgba($color-gray, 0.1);
+    position: relative;
+    z-index: 1;
+    border-radius: 30px;
+    background-color: #f9fafc;
+    overflow: hidden;
+  }
+  .img-box {
+    text-align: end;
+    img {
+      object-fit: cover;
+    }
+  }
+  .banner-content {
+    padding: 60px;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: -61px;
+      @include dir(rtl) {
+        right: 20px;
+      }
+      @include dir(ltr) {
+        left: 20px;
+      }
+      height: 80px;
+      width: 80px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url("../img/Pen-Left.png");
+      @include animation-scroll(rotate-location);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -61px;
+      @include dir(rtl) {
+        right: 174px;
+      }
+      @include dir(ltr) {
+        left: 174px;
+      }
+      height: 140px;
+      width: 140px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url("../img/Gift-Left.png");
+      @include animation-scroll(scaleIn);
+    }
+    .banner-title {
+      font-size: 44px;
+      font-weight: 800;
+      margin-bottom: 40px;
+    }
+    .prag {
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.all-services-section {
+  .services-item {
+    margin-bottom: 24px;
+    padding: 40px 20px;
+    border: 1px solid rgba($color-gray, 0.1);
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend%trans4;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba($color-white, 1);
+    &::before {
+      background-color: rgba($color-white, 1);
+      inset: 0;
+      position: absolute;
+      content: "";
+      @extend%trans4;
+    }
+    &:after {
+      content: attr(data-title);
+      position: absolute;
+      inset: 0;
+      font-size: 30px;
+      @extend%trans4;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @extend.gray-gradient-text;
+    }
+    &:hover {
+      padding: 40px 40px;
+      border: 1px solid rgba($color-gray, 0);
+      box-shadow: -15px 50px 50px rgba($color-gray, 0.1);
+      &:after,
+      &::before {
+        opacity: 0;
+      }
+    }
+    .services-name {
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .services-img {
+      height: 80px;
+    }
+  }
+}
+
+.client-section {
+  .client-slider {
+    .client-slider-item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        height: 92px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.testimonials-section {
+  .testimonials-slider {
+    padding-top: 24px;
+    .testimonials-item {
+      .testimonials-img {
+        position: relative;
+        z-index: 1;
+        img {
+          height: 500px;
+          border-radius: 30px;
+          transform: rotateY(6deg) rotateZ(-1deg);
+          box-shadow: -8px 1px 2px rgba($color-gray, 0.1);
+        }
+      }
+      .testimonials-content {
+        .prag {
+          font-size: 24px;
+          display: block;
+        }
+        .testimonials-name {
+          padding: 24px 0 10px;
+          font-size: 24px;
+          font-weight: 800;
+        }
+        .testimonials-jop {
+          font-size: 16px;
+          font-weight: 400;
+          color: rgba($color-gray, 1);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .intro-section {
+    .intro-img {
+      margin-bottom: 20px;
+      text-align: center;
+      .game.game2 {
+        max-height: 139px;
+      }
+    }
+    .intro-content {
+      text-align: center;
+      .intro-title {
+        font-size: 50px;
+      }
+      .button-box {
+        justify-content: center;
+      }
+    }
+  }
+  .banner-section {
+    .banner-box {
+      .banner-content {
+        .banner-title {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .testimonials-section {
+    .testimonials-slider {
+      .testimonials-item {
+        .testimonials-img {
+          img {
+            height: 400px;
+          }
+        }
+        .testimonials-content {
+          .prag {
+            font-size: 16px;
+          }
+          .testimonials-name {
+            font-size: 20px;
+          }
+          .testimonials-jop {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 772px) {
+  .services-section {
+    .services-box {
+      .services-title {
+        font-size: 24px;
+      }
+    }
+  }
+  .banner-section {
+    .banner-box {
+      .banner-content {
+        text-align: center;
+        padding: 40px 30px;
+        &::after {
+          top: 0;
+          height: 38px;
+          width: 38px;
+          @include dir(rtl) {
+            right: -51px;
+          }
+          @include dir(ltr) {
+            left: -51px;
+          }
+        }
+        .banner-title {
+          font-size: 29px;
+          margin-bottom: 19px;
+        }
+        .prag {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .client-section {
+    .client-slider {
+      .client-slider-item {
+        img {
+          height: 60px;
+        }
+      }
+    }
+  }
+
+  .testimonials-section {
+    .testimonials-slider {
+      .testimonials-item {
+        text-align: center;
+        .testimonials-img {
+          text-align: center;
+          padding-bottom: 24px;
+          img {
+            height: 200px;
+            margin: 0 auto;
+          }
+        }
+        .testimonials-content {
+          .prag {
+            font-size: 16px;
+          }
+          .testimonials-name {
+            font-size: 20px;
+          }
+          .testimonials-jop {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
