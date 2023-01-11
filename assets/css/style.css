@@ -137,7 +137,6 @@ body.over-flow {
 .header-section {
   position: relative;
   padding: 24px 0;
-  z-index: 8;
 }
 .header-section .open-icon {
   display: none;
@@ -156,6 +155,13 @@ body.over-flow {
 }
 .header-section .nav-box .nav-list ul {
   justify-content: center;
+}
+.header-section .nav-box .nav-list ul:hover li {
+  opacity: 0.5;
+}
+.header-section .nav-box .nav-list ul li:hover, .header-section .nav-box .nav-list ul li.current-menu-item {
+  transform: scale(1.05);
+  opacity: 1;
 }
 .header-section .nav-box .nav-list ul li a {
   padding: 0 0 10px;
@@ -1067,6 +1073,6 @@ html[dir=rtl] .sub-intro-section .intro-box::after {
   transition: 0.4s all ease-in-out;
 }
 
-.header-section .open-icon i, .header-section .nav-box .nav-list ul li a:after, .header-section .nav-box ul li a, .services-section .services-box, .services-section .services-box .services-title, .button-item a, .button-play a:after, .button-play a span, .icon-box-side ul li a {
+.header-section .open-icon i, .header-section .nav-box .nav-list ul li, .header-section .nav-box .nav-list ul li a:after, .header-section .nav-box ul li a, .services-section .services-box, .services-section .services-box .services-title, .button-item a, .button-play a:after, .button-play a span, .icon-box-side ul li a {
   transition: 0.2s all ease-in-out;
 }
